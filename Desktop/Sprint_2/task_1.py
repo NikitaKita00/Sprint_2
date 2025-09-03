@@ -1,46 +1,11 @@
-class Case:
-    def __init__(self, test_case_id, name, step_description, expected_result):
-        self.test_case_id = test_case_id
-        self.name = name
-        self.step_description = step_description
-        self.expected_result = expected_result
+shelf1 = ['клубничное варенье', 'вишнёвое варенье']
+shelf2 = ['грушевое варенье', 'абрикосовое варенье']
 
-    def print_test_case_info(self):
-        print(
-            f"ID тест-кейса:  {self.test_case_id}"
-            f"\nНазвание: {self.name}"
-            f"\nОписание шага: {self.step_description}"
-            f"\nОжидаемый результат: {self.expected_result}"
-        )
+closet = [shelf1, shelf2]
 
+print('Привет, Карлсон!')
+print('Смотри, у меня с собой:')
 
-class ExtendedCase(Case):
-    def __init__(
-        self,
-        test_case_id,
-        name,
-        step_description,
-        expected_result,
-        precondition,
-        environment,
-    ):
-        super().__init__(test_case_id, name, step_description, expected_result)
-        self.precondition = precondition
-        self.environment = environment
-
-    def print_test_case_info(self):
-        super().print_test_case_info()
-        print(f"Предусловие: {self.precondition}")
-        print(f"Окружение: {self.environment}")
-
-
-case = ExtendedCase(
-    "1",
-    "Наличие кнопки Принять",
-    "1. Открыть вкладку приёма документов 2. Проверить наличие кнопки",
-    "Кнопка доступна",
-    "Открыть сервис",
-    "Яндекс Браузер",
-)
-
-case.print_test_case_info()
+for shelf in closet:
+    for jam in shelf:
+        print(jam)
